@@ -5,8 +5,8 @@ import { AnimationWrapper } from "../../common/PageAnimation";
 
 export const UserAuthForm = ({ type }) => {
   return (
-    <AnimationWrapper>
-      <section className="h-cover flex-col bg-secondary">
+    <section className="h-cover flex-col bg-secondary">
+      <AnimationWrapper keyValue={type}>
         <h1 className="text-4xl font-gelasio capitalize text-center pb-5">
           {type == "Sign-In"
             ? "Welcome back! 😊"
@@ -41,7 +41,7 @@ export const UserAuthForm = ({ type }) => {
               <button className="btn-light center mb-4 mt-8 w-full">
                 {type.replace("-", " ")}
               </button>
-              <div className="relative w-full flex items-center my-8 opacity-15 uppercase text-secondary font-bold">
+              <div className="relative w-full flex items-center my-5 opacity-15 uppercase text-secondary font-bold">
                 <hr className="w-1/2 border-secondary" />
                 <p>or</p>
                 <hr className="w-1/2 border-secondary" />
@@ -49,7 +49,7 @@ export const UserAuthForm = ({ type }) => {
               <button className="btn-light w-full">
                 <img
                   src="/img/google.png"
-                  className="flex items-center justify-center gap-4 w-[5%] center"
+                  className="flex items-center justify-center gap-3 w-[5%] center"
                 />
                 Continue with Google
               </button>
@@ -78,7 +78,7 @@ export const UserAuthForm = ({ type }) => {
             </form>
           </div>
         </div>
-      </section>
-    </AnimationWrapper>
+      </AnimationWrapper>
+    </section>
   );
 };
