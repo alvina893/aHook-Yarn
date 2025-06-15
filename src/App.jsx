@@ -21,8 +21,6 @@ const App = () => {
           <Route path="signup" element={<UserAuthForm type="Sign-Up" />} />
         </Route>
       </Routes>
-      <p>testing</p>
-      <p>testing</p>
     </main>
   );
 };
