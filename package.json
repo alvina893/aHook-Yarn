@@ -3,9 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server/server.js",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
@@ -16,10 +15,14 @@
     "@tailwindcss/cli": "^4.1.8",
     "@tailwindcss/vite": "^4.1.7",
     "boxicons": "^2.1.4",
+    "buffer": "^6.0.3",
+    "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "framer-motion": "^12.18.1",
+    "mongoose": "^8.15.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "safer-buffer": "^2.1.2",
     "tailwindcss": "^4.1.8"
   },
   "devDependencies": {
