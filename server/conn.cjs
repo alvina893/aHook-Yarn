@@ -1,16 +1,28 @@
+const express = require("express");
 const mongoose = require("mongoose");
+require("dotenv").config();
 
-const url =
-  "mongodb+srv://alvinaleony293:LN5WbjifvJo15jw6@ahookandyarn.tldem0j.mongodb.net/?retryWrites=true&w=majority&appName=aHookandYarn";
-let PORT = 3000;
+const server = express();
+const PORT = process.env.PORT || 3000;
 
-mongoose.set("strictQuery", true);
+// Middleware to parse JSON
+server.use(express.json());
+
+// Your POST route
+server.post("/signup", (req, res) => {
+  res.json(req.body);
+});
+
+// MongoDB connection
 mongoose
-  .connect(url, {})
+  .connect(process.env.DB_URI, { autoIndex: true })
   .then(() => {
-    console.log("connect successfully");
-    console.log("Listening to port -> " + PORT);
+    console.log("✅ MongoDB connected");
+    server.listen(PORT, () => {
+      console.log(`🚀 Server running on http://localhost:${PORT}`);
+    });
   })
   .catch((err) => {
-    console.log("no connection");
+    console.error("❌ DB connection error:", err.message);
+    process.exit(1);
   });
